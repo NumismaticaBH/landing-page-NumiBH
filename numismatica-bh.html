@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Numismática BH – Avaliação Especializada de Moedas e Cédulas Antigas</title>
+<meta name="description" content="Avaliação gratuita e especializada de moedas, cédulas e coleções antigas. Atendimento via WhatsApp para todo o Brasil.">
+
+<!-- ATENÇÃO: Substitua 5531999999999 pelo número real no formato 55 + DDD + número -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --vault:#1A1005;
+  --mahogany:#2C1D09;
+  --gold:#C9A84C;
+  --gilt:#E2CC8A;
+  --parchment:#F5EDD8;
+  --ivory:#FAF7F0;
+  --bronze:#7A5C2E;
+  --text-body:#3D2E14;
+  --text-muted:#8A7252;
+  --wa:#25D366;
+  --wa-h:#1DA851;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:var(--ivory);
+  color:var(--text-body);
+  overflow-x:hidden;
+}
+
+/* ── HEADER ── */
+.hdr{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;
+  background:rgba(26,16,5,.95);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(201,168,76,.18);
+}
+
+.hdr-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.35rem;font-weight:600;
+  color:var(--gold);letter-spacing:.03em;
+  text-decoration:none;
+}
+.hdr-logo span{color:var(--parchment);font-weight:400}
+
+.hdr-wa{
+  display:flex;align-items:center;gap:8px;
+  background:var(--wa);color:#fff;
+  font-size:.82rem;font-weight:500;
+  padding:9px 20px;border-radius:100px;
+  text-decoration:none;transition:background .2s;
+}
+.hdr-wa:hover{background:var(--wa-h)}
+.hdr-wa-label{display:block}
+
+/* ── HERO ── */
+.hero{
+  min-height:100svh;
+  background:var(--vault);
+  display:flex;align-items:center;
+  padding:68px 48px 0;
+  position:relative;overflow:hidden;
+}
+
+.hero-glow{
+  position:absolute;top:25%;right:22%;
+  width:520px;height:520px;
+  background:radial-gradient(ellipse,rgba(201,168,76,.07) 0%,transparent 65%);
+  pointer-events:none;
+}
+
+/* Coin rings — the signature element */
+.coin-rings{
+  position:absolute;
+  right:-100px;top:50%;
+  transform:translateY(-50%);
+  width:580px;height:580px;
+  pointer-events:none;
+}
+
+.hero-inner{
+  position:relative;z-index:2;
+  max-width:600px;
+  padding:80px 0;
+}
+
+.hero-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  color:var(--gold);
+  font-size:.7rem;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  margin-bottom:28px;
+}
+.hero-tag::before{
+  content:'';display:block;
+  width:28px;height:1px;
+  background:var(--gold);opacity:.7;
+}
+
+.hero-h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.7rem,5.5vw,4rem);
+  font-weight:600;line-height:1.08;
+  color:var(--parchment);
+  margin-bottom:24px;
+}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+
+.hero-sub{
+  font-size:1rem;line-height:1.75;
+  color:rgba(245,237,216,.62);
+  max-width:490px;
+  margin-bottom:44px;
+  font-weight:300;
+}
+
+.btn-wa-main{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--wa);color:#fff;
+  text-decoration:none;
+  font-size:1rem;font-weight:500;
+  padding:17px 36px;border-radius:100px;
+  transition:all .25s;
+  box-shadow:0 4px 28px rgba(37,211,102,.28);
+}
+.btn-wa-main:hover{
+  background:var(--wa-h);
+  transform:translateY(-2px);
+  box-shadow:0 8px 36px rgba(37,211,102,.38);
+}
+
+.hero-anc{
+  display:inline-flex;align-items:center;gap:6px;
+  color:rgba(201,168,76,.55);
+  font-size:.85rem;text-decoration:none;
+  padding:17px 24px;
+  transition:color .2s;
+  margin-left:6px;
+}
+.hero-anc:hover{color:var(--gold)}
+
+.hero-stats{
+  display:flex;align-items:center;
+  margin-top:52px;padding-top:36px;
+  border-top:1px solid rgba(201,168,76,.12);
+}
+
+.hstat{flex:1;padding-right:24px}
+.hstat+.hstat{
+  padding-left:24px;
+  border-left:1px solid rgba(201,168,76,.15);
+}
+.hstat:last-child{padding-right:0}
+
+.hstat-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.1rem;font-weight:700;
+  color:var(--gold);line-height:1;
+}
+.hstat-l{
+  font-size:.7rem;
+  color:rgba(245,237,216,.35);
+  letter-spacing:.06em;margin-top:4px;
+}
+
+/* ── SHARED SECTION ── */
+.sec-hdr{text-align:center;margin-bottom:60px}
+
+.eyebrow{
+  display:inline-block;
+  font-size:.68rem;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--bronze);margin-bottom:14px;
+}
+.eyebrow-g{color:var(--gold)}
+
+.sec-h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,3.5vw,2.8rem);
+  font-weight:600;line-height:1.2;
+  color:var(--text-body);
+}
+.sec-h2-lt{color:var(--parchment)}
+
+.sec-p{
+  margin-top:14px;
+  font-size:.93rem;color:var(--text-muted);
+  max-width:470px;margin-left:auto;margin-right:auto;
+  line-height:1.7;font-weight:300;
+}
+.sec-p-lt{color:rgba(245,237,216,.5)}
+
+/* ── COMO FUNCIONA ── */
+.sec-como{background:var(--parchment);padding:100px 48px}
+
+.steps{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  max-width:840px;margin:0 auto;
+  position:relative;
+}
+.steps::after{
+  content:'';position:absolute;
+  top:44px;
+  left:calc(33.333%/2);right:calc(33.333%/2);
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--bronze) 20%,var(--bronze) 80%,transparent);
+  opacity:.25;pointer-events:none;
+}
+
+.step{text-align:center;padding:40px 32px}
+
+.step-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:88px;height:88px;border-radius:50%;
+  border:1px solid rgba(122,92,46,.3);
+  background:var(--vault);
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;font-weight:700;color:var(--gold);
+  margin-bottom:24px;position:relative;z-index:1;
+}
+
+.step-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.25rem;font-weight:600;
+  color:var(--text-body);margin-bottom:10px;
+}
+
+.step-desc{
+  font-size:.875rem;color:var(--text-muted);
+  line-height:1.7;font-weight:300;
+}
+
+/* ── ITENS ── */
+.sec-itens{background:var(--vault);padding:100px 48px}
+
+.items-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:16px;
+  max-width:1040px;margin:0 auto;
+}
+
+.item-card{
+  border:1px solid rgba(201,168,76,.13);
+  border-radius:12px;
+  padding:28px 24px;
+  background:rgba(255,255,255,.02);
+  transition:border-color .25s,background .25s,transform .25s;
+}
+.item-card:hover{
+  border-color:rgba(201,168,76,.3);
+  background:rgba(201,168,76,.05);
+  transform:translateY(-3px);
+}
+
+.item-glyph{font-size:1.6rem;margin-bottom:14px;line-height:1}
+
+.item-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;font-weight:600;
+  color:var(--parchment);margin-bottom:8px;
+}
+
+.item-desc{
+  font-size:.8rem;
+  color:rgba(245,237,216,.4);
+  line-height:1.6;font-weight:300;
+}
+
+/* ── DIFERENCIAIS ── */
+.sec-dif{background:var(--ivory);padding:100px 48px}
+
+.dif-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:20px;max-width:1040px;margin:0 auto;
+}
+
+.dif-card{
+  padding:32px 24px;
+  background:#fff;
+  border:1px solid rgba(122,92,46,.1);
+  border-left:3px solid var(--gold);
+  border-radius:0 12px 12px 0;
+}
+
+.dif-glyph{font-size:1.5rem;margin-bottom:16px}
+
+.dif-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.15rem;font-weight:600;
+  color:var(--text-body);margin-bottom:10px;
+}
+
+.dif-desc{
+  font-size:.82rem;color:var(--text-muted);
+  line-height:1.7;font-weight:300;
+}
+
+/* ── DEPOIMENTOS ── */
+.sec-dep{background:var(--mahogany);padding:100px 48px}
+
+.dep-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:20px;max-width:1040px;margin:0 auto;
+}
+
+.dep-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(201,168,76,.12);
+  border-radius:12px;padding:32px 28px;
+}
+
+.dep-stars{
+  color:var(--gold);font-size:.9rem;
+  letter-spacing:3px;margin-bottom:18px;
+}
+
+.dep-quote{
+  font-size:.88rem;
+  color:rgba(245,237,216,.73);
+  line-height:1.8;font-weight:300;
+  font-style:italic;margin-bottom:24px;
+}
+
+.dep-author{display:flex;align-items:center;gap:12px}
+
+.dep-av{
+  width:42px;height:42px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--bronze),var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;font-weight:700;color:var(--vault);
+}
+
+.dep-name{font-size:.9rem;font-weight:500;color:var(--parchment)}
+.dep-city{font-size:.75rem;color:rgba(245,237,216,.32);margin-top:2px}
+
+/* ── CTA FINAL ── */
+.sec-cta{
+  background:var(--vault);
+  padding:120px 48px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+
+.cta-glow{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:700px;height:500px;
+  background:radial-gradient(ellipse,rgba(201,168,76,.07) 0%,transparent 65%);
+  pointer-events:none;
+}
+
+.cta-inner{position:relative;z-index:2;max-width:540px;margin:0 auto}
+
+.cta-badge{
+  display:inline-block;
+  background:rgba(37,211,102,.1);
+  border:1px solid rgba(37,211,102,.25);
+  color:#25D366;
+  font-size:.7rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:7px 18px;border-radius:100px;
+  margin-bottom:28px;
+}
+
+.cta-h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,4vw,3rem);
+  font-weight:600;color:var(--parchment);
+  line-height:1.15;margin-bottom:18px;
+}
+.cta-h2 em{font-style:italic;color:var(--gold)}
+
+.cta-sub{
+  font-size:.95rem;
+  color:rgba(245,237,216,.52);
+  line-height:1.75;font-weight:300;
+  margin-bottom:44px;
+}
+
+.btn-wa-cta{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--wa);color:#fff;
+  text-decoration:none;
+  font-size:1.05rem;font-weight:500;
+  padding:20px 48px;border-radius:100px;
+  transition:all .25s;
+  box-shadow:0 8px 40px rgba(37,211,102,.3);
+}
+.btn-wa-cta:hover{
+  background:var(--wa-h);
+  transform:translateY(-3px);
+  box-shadow:0 12px 48px rgba(37,211,102,.42);
+}
+
+.cta-note{
+  margin-top:20px;
+  font-size:.73rem;
+  color:rgba(245,237,216,.22);
+  letter-spacing:.04em;
+}
+
+/* ── FOOTER ── */
+footer{
+  background:#120C03;
+  border-top:1px solid rgba(201,168,76,.1);
+  padding:32px 48px;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+}
+
+.ftr-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.15rem;font-weight:600;color:var(--gold);
+}
+
+.ftr-txt{font-size:.76rem;color:rgba(245,237,216,.22)}
+
+/* ── FLOATING WHATSAPP ── */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;z-index:500;
+  width:58px;height:58px;border-radius:50%;
+  background:var(--wa);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);
+  text-decoration:none;
+  transition:transform .2s,box-shadow .2s;
+}
+.wa-float:hover{
+  transform:scale(1.1);
+  box-shadow:0 8px 32px rgba(37,211,102,.55);
+}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hdr{padding:0 24px}
+  .hdr-wa-label{display:none}
+
+  .hero{padding:68px 24px 0;text-align:center}
+  .hero-inner{padding:56px 0;max-width:100%}
+  .hero-tag{justify-content:center}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .coin-rings,.hero-glow{display:none}
+  .hero-stats{justify-content:center}
+
+  .sec-como,.sec-itens,.sec-dif,.sec-dep,.sec-cta{padding:72px 24px}
+
+  .steps{grid-template-columns:1fr;max-width:400px}
+  .steps::after{display:none}
+  .step{padding:24px}
+
+  .items-grid{grid-template-columns:repeat(2,1fr)}
+
+  .dif-grid{grid-template-columns:1fr 1fr;max-width:580px}
+
+  .dep-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+
+  footer{flex-direction:column;text-align:center;padding:24px}
+}
+
+@media(max-width:480px){
+  .items-grid,.dif-grid{grid-template-columns:1fr}
+  .hero-stats{flex-direction:column;gap:20px}
+  .hstat+.hstat{border-left:none;border-top:1px solid rgba(201,168,76,.15);padding-left:0;padding-top:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- WhatsApp icon reutilizável -->
+<svg style="display:none">
+  <symbol id="wa" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </symbol>
+</svg>
+
+<!-- Botão flutuante WhatsApp -->
+<a href="https://wa.me/5531999999999?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20avalia%C3%A7%C3%A3o%20gratuita%20da%20minha%20cole%C3%A7%C3%A3o"
+   class="wa-float" target="_blank" rel="noopener" aria-label="Contato via WhatsApp">
+  <svg><use href="#wa"/></svg>
+</a>
+
+<!-- Header -->
+<header class="hdr">
+  <a href="#" class="hdr-logo">Numismática <span>BH</span></a>
+  <a href="https://wa.me/5531999999999?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20avalia%C3%A7%C3%A3o%20gratuita"
+     class="hdr-wa" target="_blank" rel="noopener">
+    <svg width="15" height="15" fill="#fff"><use href="#wa"/></svg>
+    <span class="hdr-wa-label">Fale conosco</span>
+  </a>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-glow"></div>
+
+  <!-- Anéis de moeda — elemento-assinatura -->
+  <svg class="coin-rings" viewBox="0 0 580 580" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="290" cy="290" r="275" stroke="#C9A84C" stroke-width=".5" stroke-opacity=".18"/>
+    <circle cx="290" cy="290" r="237" stroke="#C9A84C" stroke-width=".5" stroke-opacity=".14"/>
+    <circle cx="290" cy="290" r="196" stroke="#C9A84C" stroke-width=".6" stroke-opacity=".11"/>
+    <circle cx="290" cy="290" r="152" stroke="#C9A84C" stroke-width=".8" stroke-opacity=".16"/>
+    <circle cx="290" cy="290" r="105" stroke="#C9A84C" stroke-width="1"  stroke-opacity=".2"/>
+    <circle cx="290" cy="290" r="10"  fill="#C9A84C" fill-opacity=".2"/>
+    <!-- marcas cardinais -->
+    <line x1="290" y1="14"  x2="290" y2="44"  stroke="#C9A84C" stroke-width="1" stroke-opacity=".28"/>
+    <line x1="290" y1="536" x2="290" y2="566" stroke="#C9A84C" stroke-width="1" stroke-opacity=".28"/>
+    <line x1="14"  y1="290" x2="44"  y2="290" stroke="#C9A84C" stroke-width="1" stroke-opacity=".28"/>
+    <line x1="536" y1="290" x2="566" y2="290" stroke="#C9A84C" stroke-width="1" stroke-opacity=".28"/>
+    <!-- marcas diagonais -->
+    <line x1="97"  y1="97"  x2="118" y2="118" stroke="#C9A84C" stroke-width="1" stroke-opacity=".17"/>
+    <line x1="462" y1="462" x2="483" y2="483" stroke="#C9A84C" stroke-width="1" stroke-opacity=".17"/>
+    <line x1="483" y1="97"  x2="462" y2="118" stroke="#C9A84C" stroke-width="1" stroke-opacity=".17"/>
+    <line x1="118" y1="462" x2="97"  y2="483" stroke="#C9A84C" stroke-width="1" stroke-opacity=".17"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-tag">Especialistas em Numismática Brasileira</div>
+    <h1 class="hero-h1">
+      Suas moedas antigas<br>podem valer <em>muito mais</em><br>do que você imagina
+    </h1>
+    <p class="hero-sub">
+      Avaliação gratuita e especializada de moedas, cédulas e coleções antigas.
+      Atendimento via WhatsApp para todo o Brasil — com transparência e respeito
+      ao seu patrimônio histórico.
+    </p>
+    <div>
+      <a href="https://wa.me/5531999999999?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20avalia%C3%A7%C3%A3o%20gratuita%20da%20minha%20cole%C3%A7%C3%A3o"
+         class="btn-wa-main" target="_blank" rel="noopener">
+        <svg width="18" height="18" fill="#fff"><use href="#wa"/></svg>
+        Quero avaliação gratuita
+      </a>
+      <a href="#como-funciona" class="hero-anc">Como funciona ↓</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-n">+500</div>
+        <div class="hstat-l">Avaliações realizadas</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-n">15+</div>
+        <div class="hstat-l">Anos de experiência</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-n">100%</div>
+        <div class="hstat-l">Online, sem sair de casa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COMO FUNCIONA ══ -->
+<section class="sec-como" id="como-funciona">
+  <div class="sec-hdr">
+    <div class="eyebrow">Processo sem complicação</div>
+    <h2 class="sec-h2">Como funciona a avaliação</h2>
+    <p class="sec-p">Três passos simples para descobrir o valor real do seu patrimônio histórico</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3 class="step-title">Envie suas fotos</h3>
+      <p class="step-desc">Fotografe suas moedas, cédulas ou coleção e envie pelo WhatsApp. Quanto mais ângulos, melhor a avaliação inicial.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3 class="step-title">Receba a análise</h3>
+      <p class="step-desc">Nosso especialista identifica cada peça, verifica raridade, estado de conservação e potencial numismático — de forma gratuita.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3 class="step-title">Orientação ou proposta</h3>
+      <p class="step-desc">Receba orientação especializada sobre conservação e colecionismo, ou uma proposta justa caso queira negociar sua coleção.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ITENS AVALIADOS ══ -->
+<section class="sec-itens">
+  <div class="sec-hdr">
+    <div class="eyebrow eyebrow-g">O que avaliamos</div>
+    <h2 class="sec-h2 sec-h2-lt">Itens de interesse numismático</h2>
+    <p class="sec-p sec-p-lt">Especializados em numismática brasileira, com expertise em peças internacionais</p>
+  </div>
+  <div class="items-grid">
+    <div class="item-card">
+      <div class="item-glyph">👑</div>
+      <div class="item-name">Moedas do Império</div>
+      <p class="item-desc">D. Pedro I e D. Pedro II — ouro, prata e cobre da era imperial brasileira</p>
+    </div>
+    <div class="item-card">
+      <div class="item-glyph">⚖️</div>
+      <div class="item-name">Moedas em Réis</div>
+      <p class="item-desc">Da Colônia à República Velha — réis e mil-réis de todas as épocas</p>
+    </div>
+    <div class="item-card">
+      <div class="item-glyph">🏛️</div>
+      <div class="item-name">Cruzeiros e Cruzados</div>
+      <p class="item-desc">Cruzeiro, Cruzeiro Novo, Cruzado e todas as variações monetárias modernas</p>
+    </div>
+    <div class="item-card">
+      <div class="item-glyph">🎖️</div>
+      <div class="item-name">Moedas Comemorativas</div>
+      <p class="item-desc">Edições especiais, séries temáticas e proof sets do Banco Central do Brasil</p>
+    </div>
+    <div class="item-card">
+      <div class="item-glyph">🌍</div>
+      <div class="item-name">Moedas Estrangeiras</div>
+      <p class="item-desc">Peças históricas de outros países — europeias, americanas e coloniais</p>
+    </div>
+    <div class="item-card">
+      <div class="item-glyph">📜</div>
+      <div class="item-name">Cédulas Antigas</div>
+      <p class="item-desc">Papel-moeda do Império e de toda a história monetária do Brasil</p>
+    </div>
+    <div class="item-card">
+      <div class="item-glyph">📦</div>
+      <div class="item-name">Coleções Completas</div>
+      <p class="item-desc">Álbuns organizados, conjuntos temáticos ou coleções herdadas avaliadas no conjunto</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DIFERENCIAIS ══ -->
+<section class="sec-dif">
+  <div class="sec-hdr">
+    <div class="eyebrow">Por que escolher a Numismática BH</div>
+    <h2 class="sec-h2">Nossos diferenciais</h2>
+    <p class="sec-p">Mais de uma década dedicada ao colecionismo e à numismática brasileira</p>
+  </div>
+  <div class="dif-grid">
+    <div class="dif-card">
+      <div class="dif-glyph">🔍</div>
+      <h3 class="dif-title">Transparência total</h3>
+      <p class="dif-desc">Explicamos cada critério da avaliação. Você entende exatamente o que torna sua peça rara ou comum, sem jargão técnico.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-glyph">🔒</div>
+      <h3 class="dif-title">Segurança garantida</h3>
+      <p class="dif-desc">Avaliação inicial 100% online. Suas peças ficam com você durante todo o processo, sem riscos de extravio.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-glyph">🎓</div>
+      <h3 class="dif-title">Especialização real</h3>
+      <p class="dif-desc">Conhecimento aprofundado em numismática brasileira, com acesso a catálogos e referências atualizadas de mercado.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-glyph">🇧🇷</div>
+      <h3 class="dif-title">Atendimento nacional</h3>
+      <p class="dif-desc">Atendemos todo o Brasil via WhatsApp. Do Amazonas ao Rio Grande do Sul, com a mesma atenção e expertise.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DEPOIMENTOS ══ -->
+<section class="sec-dep">
+  <div class="sec-hdr">
+    <div class="eyebrow eyebrow-g">Depoimentos</div>
+    <h2 class="sec-h2 sec-h2-lt">O que dizem nossos clientes</h2>
+    <p class="sec-p sec-p-lt">Pessoas que descobriram o valor real do seu patrimônio histórico</p>
+  </div>
+  <div class="dep-grid">
+    <div class="dep-card">
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-quote">"Herdei uma caixinha com moedas do meu avô e não sabia o que fazer. A Numismática BH identificou peças raras que eu jamais imaginaria ter. Fui atendido com educação e total honestidade."</p>
+      <div class="dep-author">
+        <div class="dep-av">R</div>
+        <div>
+          <div class="dep-name">Roberto Carvalho</div>
+          <div class="dep-city">Belo Horizonte, MG</div>
+        </div>
+      </div>
+    </div>
+    <div class="dep-card">
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-quote">"Tinha cédulas antigas guardadas há décadas numa gaveta. Mandei as fotos e recebi uma avaliação detalhada em poucas horas. Uma proposta justa e sem enrolação. Serviço impecável."</p>
+      <div class="dep-author">
+        <div class="dep-av">A</div>
+        <div>
+          <div class="dep-name">Ana Paula Ferreira</div>
+          <div class="dep-city">São Paulo, SP</div>
+        </div>
+      </div>
+    </div>
+    <div class="dep-card">
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-quote">"Mesmo sem querer vender, recebi orientação completa sobre como conservar minha coleção. O conhecimento e a atenção que encontrei aqui são difíceis de achar em outro lugar."</p>
+      <div class="dep-author">
+        <div class="dep-av">M</div>
+        <div>
+          <div class="dep-name">Marcos Oliveira</div>
+          <div class="dep-city">Curitiba, PR</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section class="sec-cta">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <div class="cta-badge">⚡ Avaliação gratuita e sem compromisso</div>
+    <h2 class="cta-h2">
+      Descubra o valor do seu<br><em>patrimônio histórico</em>
+    </h2>
+    <p class="cta-sub">
+      Envie uma foto das suas moedas ou cédulas agora mesmo. A avaliação inicial é gratuita
+      e você não tem qualquer obrigação de venda ou negociação.
+    </p>
+    <a href="https://wa.me/5531999999999?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20avalia%C3%A7%C3%A3o%20gratuita%20da%20minha%20cole%C3%A7%C3%A3o%20de%20moedas"
+       class="btn-wa-cta" target="_blank" rel="noopener">
+      <svg width="22" height="22" fill="#fff"><use href="#wa"/></svg>
+      Enviar fotos pelo WhatsApp agora
+    </a>
+    <p class="cta-note">Respondemos em até 24 h &nbsp;·&nbsp; Avaliação sem custo &nbsp;·&nbsp; Atendimento em todo o Brasil</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="ftr-logo">Numismática BH</div>
+  <div class="ftr-txt">Especialistas em numismática brasileira &nbsp;·&nbsp; Atendimento nacional via WhatsApp &nbsp;·&nbsp; Belo Horizonte, MG</div>
+</footer>
+
+</body>
+</html>
