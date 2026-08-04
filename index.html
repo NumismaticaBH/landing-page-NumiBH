@@ -6,953 +6,324 @@
 <title>Numismática BH | Descubra o Valor Real das Suas Moedas e Cédulas Antigas</title>
 <meta name="description" content="Avaliação 100% gratuita, transparente e sem compromisso para moedas e cédulas antigas. Envie fotos pelo WhatsApp e receba uma resposta de especialistas em numismática.">
 
-<!--
-  ============================================================================
-  GUIA RÁPIDO DE PERSONALIZAÇÃO — Numismática BH
-  ============================================================================
-  1) LINK DO WHATSAPP: procure "PERSONALIZAÇÃO: WHATSAPP" no script no final
-     do arquivo e troque o número (WHATSAPP_NUMBER) e a mensagem padrão.
-  2) CORES: procure o bloco ":root" no início do style abaixo. Todas as
-     cores do site usam essas variáveis — mudar ali muda o site inteiro.
-  3) TEXTOS: cada seção do site tem um comentário de identificação (ex:
-     SEÇÃO: HERO). Basta localizar a seção e editar o texto diretamente.
-  4) DEPOIMENTOS / FOTOS: os avatares são círculos com iniciais (sem
-     depender de imagens externas). Procure SEÇÃO: PROVA SOCIAL e troque
-     nomes, cidades e resultados por depoimentos reais.
-  5) NÚMEROS DE EXEMPLO: "+7.000 avaliações" e "15+ anos de experiência"
-     no Hero são exemplos — troque pelos números reais da empresa.
-  6) LOGOTIPO: o nome "Numismática BH" está em texto (fácil de estilizar).
-  ============================================================================
--->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231B1206' stroke='%23C79A46' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23C79A46' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-<style>
-  /* ==========================================================================
-     VARIÁVEIS — PALETA "COFRE & OURO": marrom quase preto (cofre/tesouro)
-     + dourado antigo + creme/parchment. Ligada ao universo de moedas de
-     valor guardadas com cuidado, não a um marrom genérico de app.
-     ========================================================================== */
-  :root{
-    /* Cores — troque aqui para mudar a paleta inteira do site */
-    --creme: #F7F1E6;         /* fundo principal claro — papel/pergaminho */
-    --creme-escuro: #EEE1C6;  /* fundo alternado das seções claras */
-    --marfim: #FFFBF3;        /* branco quente — texto sobre fundo escuro */
-    --vault: #1B1206;         /* "cofre" — marrom quase preto, seções escuras */
-    --vault-alt: #120C04;     /* mais escuro ainda — rodapé */
-    --cacau: #33210F;         /* marrom principal — títulos/texto em fundo claro */
-    --cacau-claro: #6E4E37;   /* marrom médio — texto secundário */
-    --dourado: #C79A46;       /* dourado antigo — acento principal */
-    --dourado-claro: #E4CB8E; /* dourado claro — destaques sobre fundo escuro */
-    --wa: #25D366;            /* verde oficial do WhatsApp — só nos CTAs de WhatsApp */
-    --wa-escuro: #1DA851;
-
-    /* Tipografia */
-    --fonte-display: 'Cormorant Garamond', Georgia, serif;
-    --fonte-corpo: 'DM Sans', -apple-system, sans-serif;
-    --fonte-mono: 'IBM Plex Mono', monospace;
-
-    /* Espaçamento */
-    --space-2xs: .4rem;
-    --space-xs: .8rem;
-    --space-sm: 1.2rem;
-    --space-md: 2rem;
-    --space-lg: 3.2rem;
-    --space-xl: 5.2rem;
-    --space-2xl: 8rem;
-
-    --raio-sm: 4px;
-    --raio-md: 10px;
-    --raio-lg: 22px;
-    --raio-pill: 999px;
-    --sombra: 0 10px 30px rgba(0,0,0,.12);
-    --sombra-lg: 0 20px 60px rgba(0,0,0,.28);
-    --linha: 1px solid rgba(51,33,15,.14);
-    --linha-escura: 1px solid rgba(199,154,70,.16);
-    --transicao: .35s cubic-bezier(.4,0,.2,1);
-    --largura-max: 1180px;
-  }
-
-  /* ==========================================================================
-     RESET / BASE
-     ========================================================================== */
-  *,*::before,*::after{ box-sizing: border-box; margin:0; padding:0; }
-  html{ scroll-behavior: smooth; }
-  body{
-    font-family: var(--fonte-corpo);
-    background: var(--creme);
-    color: var(--cacau);
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-  img,svg{ display:block; max-width:100%; }
-  a{ color:inherit; text-decoration:none; }
-  ul{ list-style:none; }
-  button{ font:inherit; cursor:pointer; border:none; background:none; color:inherit; }
-  h1,h2,h3,h4{ font-family: var(--fonte-display); font-weight:600; line-height:1.15; letter-spacing:-.005em; }
-
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
-  }
-
-  :focus-visible{ outline: 3px solid var(--dourado); outline-offset: 3px; }
-
-  .container{ max-width: var(--largura-max); margin-inline:auto; padding-inline: var(--space-md); }
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:.6em;
-    font-family: var(--fonte-mono); font-size:.7rem; letter-spacing:.16em; text-transform:uppercase;
-    color: var(--dourado); font-weight:500;
-  }
-  .eyebrow::before{ content:''; width:20px; height:1px; background: var(--dourado); opacity:.7; }
-  .fundo-escuro .eyebrow{ color: var(--dourado-claro); }
-  .fundo-escuro .eyebrow::before{ background: var(--dourado-claro); }
-
-  .reveal{ opacity:0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
-  .reveal.is-visible{ opacity:1; transform:none; }
-  .reveal-stagger > *{ transition-delay: calc(var(--i,0) * 90ms); }
-
-  /* ==========================================================================
-     BOTÕES — CTAs de WhatsApp usam o verde oficial (reconhecimento imediato);
-     o restante da UI usa a paleta cofre/dourado da marca.
-     ========================================================================== */
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:.65em;
-    font-family: var(--fonte-corpo); font-weight:600; font-size:1rem;
-    padding: 1.05em 2em; border-radius: var(--raio-pill);
-    transition: transform var(--transicao), box-shadow var(--transicao), background var(--transicao);
-    white-space: nowrap;
-  }
-  .btn svg{ width:1.2em; height:1.2em; flex-shrink:0; }
-  .btn-wa{ background: var(--wa); color:#fff; box-shadow: 0 10px 30px rgba(37,211,102,.28); }
-  .btn-wa:hover{ background: var(--wa-escuro); transform: translateY(-2px); box-shadow: 0 14px 40px rgba(37,211,102,.4); }
-  .btn-fantasma{
-    display:inline-flex; align-items:center; gap:.4em;
-    color: rgba(228,203,142,.7); font-size:.9rem; padding: 1.05em 1.2em; transition: color var(--transicao);
-  }
-  .btn-fantasma:hover{ color: var(--dourado-claro); }
-  .btn-compacto{ padding:.7em 1.4em; font-size:.86rem; }
-
-  .trust-bar{
-    display:flex; flex-wrap:wrap; align-items:center; gap: var(--space-xs) var(--space-md);
-    font-size:.85rem; font-weight:500;
-  }
-  .trust-bar span{ display:inline-flex; align-items:center; gap:.5em; }
-  .trust-bar svg{ width:15px; height:15px; color: var(--dourado); }
-
-  /* ==========================================================================
-     SEÇÃO: HEADER
-     ========================================================================== */
-  .site-header{
-    position: sticky; top:0; z-index:50;
-    background: rgba(27,18,6,.88); backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(199,154,70,.16);
-  }
-  .header-inner{ display:flex; align-items:center; justify-content:space-between; padding-block: var(--space-xs); }
-  .logo{ display:flex; align-items:center; gap:.6em; font-family: var(--fonte-display); font-weight:600; font-size:1.3rem; color: var(--dourado); }
-  .logo span{ color: var(--marfim); font-weight:400; }
-  .logo-mark{ width:32px; height:32px; flex-shrink:0; }
-
-  /* ==========================================================================
-     SEÇÃO: HERO
-     ========================================================================== */
-  .hero{ background: var(--vault); color: var(--marfim); padding-block: var(--space-2xl) var(--space-xl); position:relative; overflow:hidden; }
-  .hero-glow{ position:absolute; top:18%; right:12%; width:560px; height:560px; background: radial-gradient(ellipse, rgba(199,154,70,.09) 0%, transparent 65%); pointer-events:none; }
-  .hero-grid{ display:grid; grid-template-columns:1fr; gap: var(--space-xl); align-items:center; position:relative; z-index:2; }
-  .hero-headline{ font-size: clamp(2.3rem, 5.2vw + 1rem, 3.7rem); margin-block: var(--space-sm) var(--space-sm); color: var(--marfim); }
-  .hero-headline em{ font-style: italic; color: var(--dourado); }
-  .hero-sub{ font-size: clamp(1.02rem, .4vw + 1rem, 1.16rem); color: rgba(247,241,230,.66); max-width:46ch; margin-bottom: var(--space-md); font-weight:400; }
-  .hero-cta-row{ display:flex; flex-wrap:wrap; align-items:center; gap: var(--space-xs); margin-bottom: var(--space-lg); }
-  .hero-visual{ display:flex; justify-content:center; align-items:center; }
-  .hero-coin{ width:min(100%, 460px); }
-
-  .hero-stats{ display:grid; grid-template-columns:repeat(3,1fr); gap: var(--space-sm); padding-top: var(--space-md); border-top: 1px solid rgba(199,154,70,.16); max-width:520px; }
-  .hstat-n{ font-family: var(--fonte-display); font-size:1.9rem; font-weight:700; color: var(--dourado); line-height:1; }
-  .hstat-l{ font-size:.72rem; color: rgba(247,241,230,.5); margin-top:.35em; }
-
-  #anelExterno{ transform-origin: 230px 230px; animation: girar-devagar 140s linear infinite; }
-  #anelInterno{ transform-origin: 230px 230px; animation: girar 90s linear infinite reverse; }
-  #moedaRosette line{ stroke: var(--dourado-claro); stroke-width:1.5; opacity:.9; }
-  #moedaAnel line{ stroke: var(--dourado); stroke-width:1.4; opacity:.6; }
-  @keyframes girar{ to{ transform: rotate(360deg); } }
-  @keyframes girar-devagar{ to{ transform: rotate(-360deg); } }
-
-  /* ==========================================================================
-     SEÇÃO: DOR / PROBLEMA (fundo claro — contraste com o hero escuro)
-     ========================================================================== */
-  .dor{ padding-block: var(--space-2xl); }
-  .dor h2{ color: var(--cacau); font-size: clamp(1.9rem, 3vw + 1rem, 2.7rem); max-width:20ch; margin-block: var(--space-sm) var(--space-lg); }
-  .dor .eyebrow{ color: var(--dourado); }
-  .dor-grid{ display:grid; grid-template-columns:1fr; gap: var(--space-md); }
-  .dor-item{ display:flex; gap: var(--space-sm); align-items:flex-start; padding-block: var(--space-sm); border-top: var(--linha); }
-  .dor-item:last-child{ border-bottom: var(--linha); }
-  .dor-marca{ width:22px; height:22px; border-radius:50%; border:1.5px solid var(--dourado); flex-shrink:0; margin-top:.3em; position:relative; }
-  .dor-marca::after{ content:''; position:absolute; inset:5px; border-radius:50%; border:1px solid var(--dourado); opacity:.6; }
-  .dor-item p{ font-size:1.05rem; color: var(--cacau-claro); }
-  .dor-bridge{ margin-top: var(--space-lg); font-size:1.2rem; color: var(--cacau); font-family: var(--fonte-display); font-style:italic; max-width:52ch; }
-
-  /* ==========================================================================
-     SEÇÃO: BENEFÍCIOS (fundo escuro — declaração de valor com impacto)
-     ========================================================================== */
-  .beneficios{ background: var(--vault); color: var(--marfim); padding-block: var(--space-2xl); }
-  .secao-cabecalho{ max-width:62ch; margin-bottom: var(--space-xl); }
-  .secao-cabecalho h2{ font-size: clamp(1.9rem, 3vw + 1rem, 2.6rem); margin-top: var(--space-xs); }
-  .beneficios .secao-cabecalho h2{ color: var(--marfim); }
-  .secao-cabecalho p{ color: var(--cacau-claro); font-size:1.08rem; margin-top: var(--space-xs); max-width:56ch; }
-  .beneficios .secao-cabecalho p{ color: rgba(247,241,230,.6); }
-
-  .beneficios-grid{ display:grid; grid-template-columns:1fr; gap: var(--space-lg); }
-  .beneficio-icone{
-    width:68px; height:68px; border-radius:50%;
-    background: rgba(199,154,70,.08); border:1px solid rgba(199,154,70,.35);
-    display:flex; align-items:center; justify-content:center; margin-bottom: var(--space-sm);
-  }
-  .beneficio-icone svg{ width:28px; height:28px; stroke: var(--dourado); }
-  .beneficio-card h3{ font-size:1.35rem; margin-bottom:.5em; color: var(--marfim); }
-  .beneficio-card p{ color: rgba(247,241,230,.6); font-size:1rem; }
-
-  /* ==========================================================================
-     SEÇÃO: COMO FUNCIONA
-     ========================================================================== */
-  .como-funciona{ background: var(--creme-escuro); padding-block: var(--space-2xl); }
-  .passos{ display:grid; grid-template-columns:1fr; gap: var(--space-lg); margin-top: var(--space-lg); }
-  .passo{ text-align:center; }
-  .passo-badge{
-    width:84px; height:84px; border-radius:50%; margin-inline:auto var(--space-sm);
-    background: var(--vault); border:1px solid rgba(199,154,70,.35);
-    display:flex; align-items:center; justify-content:center;
-    font-family: var(--fonte-display); font-size:2rem; font-weight:700; color: var(--dourado);
-  }
-  .passo-numero{ display:block; font-family: var(--fonte-mono); font-size:.7rem; letter-spacing:.1em; color: var(--dourado); margin-bottom: var(--space-2xs); }
-  .passo h3{ font-size:1.28rem; margin-bottom:.4em; }
-  .passo p{ color: var(--cacau-claro); max-width:32ch; margin-inline:auto; }
-
-  /* ==========================================================================
-     SEÇÃO: ITENS AVALIADOS (bônus — reforça autoridade e ajuda a pessoa a
-     se reconhecer no que tem em casa)
-     ========================================================================== */
-  .itens{ background: var(--vault); color: var(--marfim); padding-block: var(--space-2xl); }
-  .itens .secao-cabecalho h2{ color: var(--marfim); }
-  .itens .secao-cabecalho p{ color: rgba(247,241,230,.6); }
-  .itens-grid{ display:grid; grid-template-columns:1fr; gap: var(--space-sm); margin-top: var(--space-lg); }
-  .item-card{
-    border:1px solid rgba(199,154,70,.14); border-radius: var(--raio-md);
-    padding: var(--space-md); background: rgba(255,255,255,.02);
-    transition: border-color var(--transicao), background var(--transicao), transform var(--transicao);
-  }
-  .item-card:hover{ border-color: rgba(199,154,70,.4); background: rgba(199,154,70,.05); transform: translateY(-3px); }
-  .item-icone{ width:30px; height:30px; margin-bottom: var(--space-xs); stroke: var(--dourado); }
-  .item-nome{ font-family: var(--fonte-display); font-size:1.15rem; font-weight:600; color: var(--marfim); margin-bottom:.4em; }
-  .item-desc{ font-size:.85rem; color: rgba(247,241,230,.5); line-height:1.6; }
-
-  /* ==========================================================================
-     SEÇÃO: PROVA SOCIAL
-     ========================================================================== */
-  .depoimentos{ padding-block: var(--space-2xl); }
-  .depoimentos-grid{ display:grid; grid-template-columns:1fr; gap: var(--space-md); margin-top: var(--space-lg); }
-  .depoimento-card{ background: var(--marfim); border: var(--linha); border-radius: var(--raio-lg); padding: var(--space-md); box-shadow: var(--sombra); }
-  .estrelas{ display:flex; gap:.2em; margin-bottom: var(--space-sm); }
-  .estrelas svg{ width:16px; height:16px; fill: var(--dourado); }
-  .depoimento-texto{ font-size:1.02rem; color: var(--cacau); margin-bottom: var(--space-md); font-style:italic; }
-  .depoimento-autor{ display:flex; align-items:center; gap:.8em; }
-  .avatar{
-    width:46px; height:46px; border-radius:50%; flex-shrink:0;
-    background: linear-gradient(135deg, var(--cacau-claro), var(--dourado));
-    color: var(--vault);
-    display:flex; align-items:center; justify-content:center;
-    font-family: var(--fonte-display); font-weight:700; font-size:.95rem;
-  }
-  .depoimento-nome{ font-weight:700; font-size:.95rem; }
-  .depoimento-local{ font-size:.82rem; color: var(--cacau-claro); }
-
-  .cta-strip{
-    margin-top: var(--space-xl); background: var(--vault); color: var(--marfim);
-    border-radius: var(--raio-lg); padding: var(--space-lg) var(--space-md);
-    display:flex; flex-direction:column; gap: var(--space-md); align-items:flex-start;
-    box-shadow: var(--sombra-lg); border: 1px solid rgba(199,154,70,.2);
-  }
-  .cta-strip h3{ color: var(--marfim); font-size:1.5rem; max-width:24ch; }
-  .cta-strip p{ color: rgba(247,241,230,.6); max-width:40ch; }
-
-  /* ==========================================================================
-     SEÇÃO: OFERTA
-     ========================================================================== */
-  .oferta{ background: var(--creme-escuro); padding-block: var(--space-2xl); }
-  .oferta-card{
-    max-width:760px; margin-inline:auto; background: var(--marfim);
-    border-radius: var(--raio-lg); padding: var(--space-xl) var(--space-md);
-    box-shadow: var(--sombra-lg); text-align:center; border: 1px solid rgba(199,154,70,.3);
-  }
-  .oferta-selo{
-    display:inline-block; font-family: var(--fonte-mono); font-size:.72rem; letter-spacing:.1em;
-    color: var(--marfim); background: var(--vault); padding:.5em 1.2em; border-radius: var(--raio-pill); margin-bottom: var(--space-md);
-  }
-  .oferta-card h2{ font-size: clamp(1.7rem, 2.6vw + 1rem, 2.2rem); margin-bottom: var(--space-md); }
-  .oferta-lista{ text-align:left; display:grid; gap: var(--space-sm); max-width:480px; margin-inline:auto; margin-bottom: var(--space-lg); }
-  .oferta-item{ display:flex; gap: var(--space-xs); align-items:flex-start; }
-  .oferta-item svg{ width:22px; height:22px; flex-shrink:0; color: var(--dourado); margin-top:.15em; }
-  .oferta-rodape{ font-size:.95rem; color: var(--cacau-claro); }
-
-  /* ==========================================================================
-     SEÇÃO: GARANTIA
-     ========================================================================== */
-  .garantia{ background: var(--vault); color: var(--marfim); padding-block: var(--space-2xl); }
-  .garantia-box{ display:grid; grid-template-columns:1fr; gap: var(--space-lg); align-items:center; text-align:center; }
-  .selo-garantia{ width:110px; height:110px; margin-inline:auto; }
-  .garantia-box h2{ color: var(--marfim); font-size: clamp(1.6rem, 2.4vw + 1rem, 2.1rem); }
-  .garantia-box p{ color: rgba(247,241,230,.6); max-width:56ch; margin-inline:auto; margin-top: var(--space-sm); font-size:1.05rem; }
-
-  /* ==========================================================================
-     SEÇÃO: FAQ
-     ========================================================================== */
-  .faq{ padding-block: var(--space-2xl); }
-  .faq-lista{ max-width:760px; margin-top: var(--space-lg); border-top: var(--linha); }
-  .faq-item{ border-bottom: var(--linha); }
-  .faq-pergunta{ width:100%; display:flex; align-items:center; justify-content:space-between; gap: var(--space-md); padding-block: var(--space-sm); text-align:left; font-family: var(--fonte-display); font-size:1.15rem; font-weight:600; }
-  .faq-icone{ width:22px; height:22px; flex-shrink:0; position:relative; }
-  .faq-icone::before, .faq-icone::after{ content:''; position:absolute; background: var(--dourado); top:50%; left:50%; transform:translate(-50%,-50%); transition: transform var(--transicao); }
-  .faq-icone::before{ width:14px; height:2px; }
-  .faq-icone::after{ width:2px; height:14px; }
-  .faq-item.is-open .faq-icone::after{ transform: translate(-50%,-50%) rotate(90deg); opacity:0; }
-  .faq-resposta-wrap{ display:grid; grid-template-rows:0fr; transition: grid-template-rows var(--transicao); }
-  .faq-item.is-open .faq-resposta-wrap{ grid-template-rows:1fr; }
-  .faq-resposta-inner{ overflow:hidden; }
-  .faq-resposta{ padding-bottom: var(--space-sm); color: var(--cacau-claro); max-width:64ch; font-size:1rem; }
-
-  /* ==========================================================================
-     SEÇÃO: CTA FINAL
-     ========================================================================== */
-  .cta-final{ background: var(--vault); color: var(--marfim); padding-block: var(--space-2xl); text-align:center; position:relative; overflow:hidden; }
-  .cta-glow{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:700px; height:500px; background: radial-gradient(ellipse, rgba(199,154,70,.08) 0%, transparent 65%); pointer-events:none; }
-  .cta-final .container{ position:relative; z-index:2; }
-  .cta-final h2{ color: var(--marfim); font-size: clamp(2rem, 3.4vw + 1rem, 3rem); max-width:22ch; margin-inline:auto; margin-block: var(--space-sm); }
-  .cta-final h2 em{ font-style:italic; color: var(--dourado); }
-  .cta-final p{ color: rgba(247,241,230,.6); max-width:52ch; margin-inline:auto; font-size:1.1rem; margin-bottom: var(--space-lg); }
-  .cta-final .trust-bar{ justify-content:center; margin-top: var(--space-md); color: rgba(247,241,230,.5); }
-
-  /* ==========================================================================
-     FOOTER
-     ========================================================================== */
-  .site-footer{ background: var(--vault-alt); color: rgba(247,241,230,.55); padding-block: var(--space-lg); border-top:1px solid rgba(199,154,70,.12); }
-  .footer-inner{ display:flex; flex-direction:column; gap: var(--space-sm); align-items:flex-start; font-size:.86rem; }
-  .footer-logo{ font-family: var(--fonte-display); color: var(--dourado); font-size:1.1rem; }
-
-  /* ==========================================================================
-     WHATSAPP FLUTUANTE
-     ========================================================================== */
-  .whatsapp-flutuante{
-    position:fixed; bottom: var(--space-sm); right: var(--space-sm); z-index:60;
-    width:60px; height:60px; border-radius:50%; background: var(--wa);
-    display:flex; align-items:center; justify-content:center; box-shadow: 0 10px 30px rgba(37,211,102,.4);
-    transition: transform var(--transicao);
-  }
-  .whatsapp-flutuante:hover{ transform: scale(1.08); }
-  .whatsapp-flutuante svg{ width:30px; height:30px; }
-  .whatsapp-flutuante::before{ content:''; position:absolute; inset:-6px; border-radius:50%; border:2px solid rgba(37,211,102,.5); animation: pulso 2.6s ease-out infinite; }
-  @keyframes pulso{ 0%{ transform:scale(.9); opacity:.9; } 100%{ transform:scale(1.35); opacity:0; } }
-
-  /* ==========================================================================
-     RESPONSIVO
-     ========================================================================== */
-  @media (min-width:640px){
-    .dor-grid{ grid-template-columns:1fr 1fr; column-gap: var(--space-lg); }
-    .beneficios-grid{ grid-template-columns: repeat(3,1fr); }
-    .itens-grid{ grid-template-columns: repeat(2,1fr); }
-    .depoimentos-grid{ grid-template-columns: repeat(2,1fr); }
-    .cta-strip{ flex-direction:row; align-items:center; justify-content:space-between; }
-  }
-  @media (min-width:980px){
-    .hero-grid{ grid-template-columns:1.1fr .9fr; gap: var(--space-2xl); }
-    .depoimentos-grid{ grid-template-columns: repeat(3,1fr); }
-    .itens-grid{ grid-template-columns: repeat(4,1fr); }
-    .passos{ grid-template-columns: repeat(3,1fr); gap: var(--space-md); }
-    .garantia-box{ grid-template-columns:auto 1fr; text-align:left; }
-    .garantia-box p{ margin-inline:0; }
-  }
-</style>
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/layout.css">
 </head>
 <body>
 
-<!-- Ícone oficial do WhatsApp, reutilizável via <use> -->
-<svg style="display:none" aria-hidden="true">
-  <symbol id="wa-icon" viewBox="0 0 24 24">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+<svg class="icon-defs" aria-hidden="true">
+  <symbol id="icon-whatsapp" viewBox="0 0 32 32">
+    <path fill="currentColor" d="M16 3C9.1 3 3.5 8.6 3.5 15.5c0 2.4.66 4.63 1.8 6.55L3 29l7.13-2.26a12.9 12.9 0 0 0 5.87 1.42h.01c6.9 0 12.5-5.6 12.5-12.5S22.9 3 16 3Zm0 22.7h-.01a10.6 10.6 0 0 1-5.42-1.49l-.39-.23-4.23 1.34 1.37-4.13-.25-.42a10.53 10.53 0 0 1-1.62-5.68c0-5.87 4.77-10.64 10.65-10.64 2.85 0 5.52 1.11 7.53 3.12a10.57 10.57 0 0 1 3.12 7.53c0 5.87-4.78 10.6-10.75 10.6Z"/>
+    <path fill="currentColor" d="M22.07 18.63c-.33-.17-1.96-.97-2.27-1.08-.3-.11-.53-.17-.75.17-.22.33-.86 1.08-1.05 1.31-.19.22-.39.25-.72.08-.33-.17-1.4-.52-2.66-1.65-.98-.88-1.65-1.96-1.84-2.29-.19-.33-.02-.51.15-.68.15-.15.33-.39.5-.58.17-.2.22-.33.33-.55.11-.22.06-.42-.03-.58-.08-.17-.75-1.82-1.03-2.5-.27-.66-.55-.57-.75-.58-.19-.01-.42-.01-.64-.01-.22 0-.58.08-.89.42-.3.33-1.17 1.15-1.17 2.8s1.2 3.24 1.37 3.47c.17.22 2.36 3.62 5.72 5.08.8.35 1.42.55 1.9.71.8.25 1.53.22 2.11.13.64-.1 1.96-.8 2.24-1.58.28-.77.28-1.43.19-1.58-.08-.14-.3-.22-.63-.38Z"/>
+  </symbol>
+  <symbol id="icon-email" viewBox="0 0 24 24">
+    <rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="#C79A46" stroke-width="1.4"/>
+    <path d="M3.5 6.2 12 12.8l8.5-6.6" fill="none" stroke="#C79A46" stroke-width="1.4"/>
+  </symbol>
+  <symbol id="icon-instagram" viewBox="0 0 24 24">
+    <defs>
+      <radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
+        <stop offset="0%" stop-color="#fdf497"/>
+        <stop offset="5%" stop-color="#fdf497"/>
+        <stop offset="45%" stop-color="#fd5949"/>
+        <stop offset="60%" stop-color="#d6249f"/>
+        <stop offset="90%" stop-color="#285AEB"/>
+      </radialGradient>
+    </defs>
+    <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#ig-grad)"/>
+    <rect x="6.5" y="6.5" width="11" height="11" rx="3.2" fill="none" stroke="#fff" stroke-width="1.6"/>
+    <circle cx="12" cy="12" r="3.1" fill="none" stroke="#fff" stroke-width="1.6"/>
+    <circle cx="16.2" cy="7.8" r="1.05" fill="#fff"/>
   </symbol>
 </svg>
 
-<!-- ============================================================
-     SEÇÃO: HEADER
-     ============================================================ -->
 <header class="site-header" id="siteHeader">
-  <div class="container header-inner">
-    <a href="#topo" class="logo">
-      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
-        <circle cx="20" cy="20" r="18" fill="none" stroke="var(--dourado)" stroke-width="1.6"/>
-        <circle cx="20" cy="20" r="12" fill="none" stroke="var(--dourado)" stroke-width="1" opacity=".6"/>
-        <circle cx="20" cy="20" r="2.4" fill="var(--dourado)"/>
-      </svg>
-      Numismática <span>BH</span>
+  <div class="container">
+    <a href="#topo" class="site-logo" aria-label="Numismática BH — início">
+      <img src="assets/logo-numismatica-bh-white-transparent.svg" alt="Numismática BH">
     </a>
-    <a href="#" class="btn btn-wa btn-compacto js-whatsapp-cta" data-cta="header">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa-icon"/></svg>
-      Avaliar Agora
-    </a>
+    <div class="header-actions">
+      <!-- LINK PENDENTE: apontar para a página do grupo de colecionadores quando estiver disponível -->
+      <a href="#" class="btn-ghost">Quero comprar</a>
+      <a href="#" class="btn btn-whatsapp btn-whatsapp--compact js-whatsapp-cta" data-cta="header">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+        Avaliar Agora
+      </a>
+    </div>
   </div>
 </header>
 
 <main id="topo">
 
-  <!-- ============================================================
-       SEÇÃO: HERO
-       ============================================================ -->
-  <section class="hero">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="container hero-grid">
-      <div class="hero-conteudo reveal">
+  <!-- HERO -->
+  <section class="hero" id="hero" data-reveal>
+    <div class="container">
+      <div class="hero-content">
         <span class="eyebrow">Avaliação 100% gratuita</span>
-        <h1 class="hero-headline">Suas moedas e cédulas antigas podem valer <em>muito mais</em> do que você imagina</h1>
-        <p class="hero-sub">Envie fotos pelo WhatsApp e receba, sem custo e sem compromisso, a avaliação de especialistas em numismática — direto de casa.</p>
+        <h1 class="hero-title">Suas moedas e cédulas antigas podem valer <em>muito mais</em> do que você imagina</h1>
+        <p class="hero-subtitle">Envie fotos pelo WhatsApp e receba, sem custo e sem compromisso, a avaliação de especialistas em numismática — direto de casa.</p>
         <div class="hero-cta-row">
-          <a href="#" class="btn btn-wa js-whatsapp-cta" data-cta="hero">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa-icon"/></svg>
+          <a href="#" class="btn btn-whatsapp js-whatsapp-cta" data-cta="hero">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
             Quero Avaliar Minhas Peças
           </a>
-          <a href="#como-funciona" class="btn-fantasma">Como funciona ↓</a>
+          <a href="#como-funciona" class="btn-link">Como funciona ↓</a>
         </div>
-        <div class="hero-stats">
-          <div class="hstat">
-            <div class="hstat-n">+7.000</div>
-            <div class="hstat-l">Avaliações realizadas <!-- exemplo — troque pelo número real --></div>
+        <div class="stat-list">
+          <div>
+            <div class="stat-value">+7.000</div>
+            <div class="stat-label">Avaliações realizadas</div>
           </div>
-          <div class="hstat">
-            <div class="hstat-n">100%</div>
-            <div class="hstat-l">Online, sem sair de casa</div>
+          <div>
+            <div class="stat-value">100%</div>
+            <div class="stat-label">Online, sem sair de casa</div>
           </div>
-          <div class="hstat">
-            <div class="hstat-n">0</div>
-            <div class="hstat-l">Compromisso de venda</div>
+          <div>
+            <div class="stat-value">0</div>
+            <div class="stat-label">Compromisso de venda</div>
           </div>
         </div>
       </div>
-
-      <div class="hero-visual reveal">
-        <!-- Ilustração assinatura: anéis de moeda + cédula ao fundo.
-             Traços finos gerados via JS — veja buildCoinDecoration() -->
-        <svg class="hero-coin" viewBox="0 0 460 460" role="img" aria-label="Ilustração de uma moeda antiga gravada, ao lado de uma cédula" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <defs>
-            <path id="coinTextPath" d="M 230,230 m -148,0 a 148,148 0 1,1 296,0 a 148,148 0 1,1 -296,0"/>
-          </defs>
-
-          <!-- anéis externos decorativos, com marcas cardeais (inspirados em instrumento de precisão) -->
-          <circle cx="230" cy="230" r="220" fill="none" stroke="var(--dourado)" stroke-width=".5" stroke-opacity=".16"/>
-          <circle cx="230" cy="230" r="188" fill="none" stroke="var(--dourado)" stroke-width=".5" stroke-opacity=".12"/>
-          <g stroke="var(--dourado)" stroke-width="1" stroke-opacity=".3">
-            <line x1="230" y1="8" x2="230" y2="30"/>
-            <line x1="230" y1="430" x2="230" y2="452"/>
-            <line x1="8" y1="230" x2="30" y2="230"/>
-            <line x1="430" y1="230" x2="452" y2="230"/>
+      <div class="hero-visual">
+        <svg class="coin-illustration" viewBox="0 0 300 300" aria-hidden="true">
+          <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(199,154,70,.14)" stroke-width="1"/>
+          <g data-spin>
+            <path id="coin-ring-path" d="M 150,150 m -118,0 a 118,118 0 1,1 236,0 a 118,118 0 1,1 -236,0" fill="none"/>
+            <text fill="#C79A46" font-family="'IBM Plex Mono', monospace" font-size="11.5" letter-spacing="2">
+              <textPath href="#coin-ring-path">NUMISMÁTICA BH • AVALIAÇÃO GRATUITA • TRANSPARENTE • SEGURA • </textPath>
+            </text>
+            <circle cx="150" cy="150" r="100" fill="none" stroke="rgba(199,154,70,.3)" stroke-width="1.5"/>
+            <circle cx="150" cy="150" r="90" fill="none" stroke="rgba(199,154,70,.5)" stroke-width="1"/>
+            <circle cx="150" cy="150" r="78" fill="#241708" stroke="#C79A46" stroke-width="2"/>
+            <circle cx="150" cy="150" r="68" fill="none" stroke="rgba(228,203,142,.5)" stroke-width="1"/>
+            <text x="150" y="163" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="42" fill="#E4CB8E">BH</text>
           </g>
-
-          <rect x="44" y="270" width="200" height="110" rx="10" fill="var(--vault)" stroke="var(--dourado)" stroke-width="1.4" opacity=".9" transform="rotate(-9 144 325)"/>
-          <line x1="68" y1="298" x2="214" y2="298" stroke="var(--dourado)" stroke-width="1.2" opacity=".5" transform="rotate(-9 144 325)"/>
-          <line x1="68" y1="312" x2="190" y2="312" stroke="var(--dourado)" stroke-width="1.2" opacity=".5" transform="rotate(-9 144 325)"/>
-          <circle cx="96" cy="348" r="17" fill="none" stroke="var(--dourado)" stroke-width="1.2" opacity=".5" transform="rotate(-9 144 325)"/>
-
-          <g id="anelExterno">
-            <g id="moedaAnel"></g>
-          </g>
-
-          <circle cx="230" cy="230" r="160" fill="var(--vault)" stroke="var(--dourado)" stroke-width="2.4"/>
-          <circle cx="230" cy="230" r="146" fill="none" stroke="var(--dourado-claro)" stroke-width="1.2" opacity=".7"/>
-
-          <text font-family="var(--fonte-mono)" font-size="11" letter-spacing="3.5" fill="var(--dourado-claro)">
-            <textPath href="#coinTextPath" xlink:href="#coinTextPath" startOffset="0%">NUMISMÁTICA BH • AVALIAÇÃO GRATUITA • TRANSPARENTE •</textPath>
-          </text>
-
-          <g id="anelInterno">
-            <circle cx="230" cy="230" r="108" fill="none" stroke="var(--dourado)" stroke-width="1.6"/>
-            <g id="moedaRosette"></g>
-          </g>
-          <circle cx="230" cy="230" r="5" fill="var(--dourado-claro)"/>
         </svg>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SEÇÃO: DOR / PROBLEMA
-       ============================================================ -->
-  <section class="dor">
+  <!-- COMPROMISSOS -->
+  <section class="bg-creme" id="compromissos" data-reveal>
     <div class="container">
-      <span class="eyebrow reveal">Talvez isso soe familiar</span>
-      <h2 class="reveal">Aquelas moedas antigas guardadas na gaveta... e agora?</h2>
+      <h2 class="section-title">Três compromissos simples guiam cada avaliação que fazemos.</h2>
+      <div class="compromissos-grid">
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">◆</div>
+          <h3 class="card-title">Transparência total</h3>
+          <p class="card-body">Você recebe uma avaliação explicada em detalhes — sem letras miúdas. Você entende exatamente como chegamos ao valor da sua peça.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">☎</div>
+          <h3 class="card-title">Tudo pelo WhatsApp</h3>
+          <p class="card-body">Todo o processo acontece pelo WhatsApp. Fotografe suas peças, envie e receba a resposta sem marcar visita nem sair do sofá.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">✓</div>
+          <h3 class="card-title">Especialistas de verdade</h3>
+          <p class="card-body">Especialistas com experiência real em numismática e milhares de avaliações feitas. Sem pressão — a decisão final é sempre sua.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <div class="dor-grid">
+  <!-- COMO FUNCIONA -->
+  <section class="bg-creme-escuro" id="como-funciona" data-reveal>
+    <div class="container">
+      <h2 class="section-title">Da foto à proposta, em três passos simples</h2>
+      <div class="steps-grid">
         <div>
-          <div class="dor-item reveal">
-            <span class="dor-marca" aria-hidden="true"></span>
-            <p>Você herdou uma coleção do seu avô, achou moedas antigas guardadas numa caixa, ou simplesmente nunca soube o que fazer com aquelas cédulas em casa.</p>
-          </div>
-          <div class="dor-item reveal">
-            <span class="dor-marca" aria-hidden="true"></span>
-            <p>Não sabe se é uma peça rara ou "só uma moeda velha" — e sem informação, é fácil deixar pra depois.</p>
-          </div>
+          <span class="step-number">PASSO 1 DE 3</span>
+          <h3 class="step-title">Envie as fotos</h3>
+          <p class="step-body">Fotografe suas moedas ou cédulas e mande pelo WhatsApp. Leva menos de 2 minutos.</p>
         </div>
         <div>
-          <div class="dor-item reveal">
-            <span class="dor-marca" aria-hidden="true"></span>
-            <p>Tem medo de vender por um preço injusto pra alguém que se aproveita de quem não entende do assunto.</p>
-          </div>
-          <div class="dor-item reveal">
-            <span class="dor-marca" aria-hidden="true"></span>
-            <p>Não tem tempo — nem vontade — de sair de casa atrás de um comprador confiável.</p>
-          </div>
+          <span class="step-number">PASSO 2 DE 3</span>
+          <h3 class="step-title">Receba a avaliação</h3>
+          <p class="step-body">Nossos especialistas avaliam cada peça considerando raridade, ano, conservação e demanda de mercado.</p>
         </div>
-      </div>
-
-      <p class="dor-bridge reveal">A Numismática BH existe justamente pra resolver isso: com clareza, sem enrolação e sem você sair do sofá.</p>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SEÇÃO: SOLUÇÃO / BENEFÍCIOS
-       ============================================================ -->
-  <section class="beneficios fundo-escuro" id="beneficios">
-    <div class="container">
-      <div class="secao-cabecalho reveal">
-        <span class="eyebrow">Por que a Numismática BH</span>
-        <h2>Feito pra quem quer clareza, não dor de cabeça</h2>
-        <p>Três compromissos simples guiam cada avaliação que fazemos.</p>
-      </div>
-
-      <div class="beneficios-grid reveal-stagger">
-        <div class="beneficio-card reveal" style="--i:0">
-          <div class="beneficio-icone">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3.2"/></svg>
-          </div>
-          <h3>Total transparência, do início ao fim</h3>
-          <p>Você recebe uma avaliação explicada em detalhes — sem letras miúdas. Você entende exatamente como chegamos ao valor da sua peça.</p>
-        </div>
-        <div class="beneficio-card reveal" style="--i:1">
-          <div class="beneficio-icone">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
-          </div>
-          <h3>Resolva tudo sem sair de casa</h3>
-          <p>Todo o processo acontece pelo WhatsApp. Fotografe suas peças, envie e receba a resposta sem marcar visita nem sair do sofá.</p>
-        </div>
-        <div class="beneficio-card reveal" style="--i:2">
-          <div class="beneficio-icone">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11Z"/><path d="M9 12l2 2 4-4"/></svg>
-          </div>
-          <h3>Negocie com total segurança</h3>
-          <p>Especialistas com experiência real em numismática e milhares de avaliações feitas. Sem pressão — a decisão final é sempre sua.</p>
+        <div>
+          <span class="step-number">PASSO 3 DE 3</span>
+          <h3 class="step-title">Decida com calma</h3>
+          <p class="step-body">Você recebe uma proposta clara. A decisão de vender ou não é sempre sua, sem pressão.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SEÇÃO: COMO FUNCIONA
-       ============================================================ -->
-  <section class="como-funciona" id="como-funciona">
+  <!-- O QUE AVALIAMOS -->
+  <section class="bg-creme" id="avaliamos" data-reveal>
     <div class="container">
-      <div class="secao-cabecalho reveal">
-        <span class="eyebrow">Como funciona</span>
-        <h2>Da foto à proposta, em três passos simples</h2>
-      </div>
-
-      <div class="passos">
-        <div class="passo reveal">
-          <div class="passo-badge">1</div>
-          <span class="passo-numero">PASSO 1 DE 3</span>
-          <h3>Envie as fotos</h3>
-          <p>Fotografe suas moedas ou cédulas e mande pelo WhatsApp. Leva menos de 2 minutos.</p>
+      <h2 class="section-title">O que avaliamos</h2>
+      <div class="avaliamos-grid">
+        <div class="card card--tight">
+          <h3 class="card-title">Moedas antigas</h3>
+          <p class="card-body">De diferentes épocas e origens, brasileiras ou estrangeiras.</p>
         </div>
-        <div class="passo reveal">
-          <div class="passo-badge">2</div>
-          <span class="passo-numero">PASSO 2 DE 3</span>
-          <h3>Receba a análise</h3>
-          <p>Nossos especialistas avaliam cada peça considerando raridade, ano, conservação e demanda de mercado.</p>
+        <div class="card card--tight">
+          <h3 class="card-title">Cédulas raras</h3>
+          <p class="card-body">Notas fora de circulação, edições limitadas ou históricas.</p>
         </div>
-        <div class="passo reveal">
-          <div class="passo-badge">3</div>
-          <span class="passo-numero">PASSO 3 DE 3</span>
-          <h3>Orientação ou proposta</h3>
-          <p>Você recebe uma explicação clara do valor das suas peças e, se fizer sentido, uma proposta justa — sem compromisso de aceitar.</p>
+        <div class="card card--tight">
+          <h3 class="card-title">Comemorativas</h3>
+          <p class="card-body">Emissões especiais de eventos e datas marcantes.</p>
+        </div>
+        <div class="card card--tight">
+          <h3 class="card-title">Coleções herdadas</h3>
+          <p class="card-body">Álbuns organizados, conjuntos temáticos ou coleções herdadas, avaliados no conjunto.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SEÇÃO: ITENS AVALIADOS (bônus)
-       ============================================================ -->
-  <section class="itens">
+  <!-- DEPOIMENTOS -->
+  <section class="bg-creme-escuro" id="depoimentos" data-reveal>
     <div class="container">
-      <div class="secao-cabecalho reveal">
-        <span class="eyebrow">O que avaliamos</span>
-        <h2>Itens de interesse numismático</h2>
-        <p>Especializados em numismática brasileira, com experiência também em peças internacionais.</p>
-      </div>
-
-      <div class="itens-grid reveal-stagger">
-        <div class="item-card reveal" style="--i:0">
-          <svg class="item-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="14" r="7"/><path d="M9 5.5 12 2l3 3.5M7 8l-2-1M17 8l2-1"/></svg>
-          <div class="item-nome">Moedas do Império</div>
-          <p class="item-desc">D. Pedro I e D. Pedro II — ouro, prata e cobre da era imperial brasileira</p>
-        </div>
-        <div class="item-card reveal" style="--i:1">
-          <svg class="item-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M5 7h14M5 7 2 13a3 3 0 0 0 6 0L5 7Zm14 0-3 6a3 3 0 0 0 6 0l-3-6Z"/></svg>
-          <div class="item-nome">Moedas em Réis</div>
-          <p class="item-desc">Da Colônia à República Velha — réis e mil-réis de todas as épocas</p>
-        </div>
-        <div class="item-card reveal" style="--i:2">
-          <svg class="item-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21h16M5 21V10M19 21V10M3 10l9-6 9 6M8 21v-6M12 21v-6M16 21v-6"/></svg>
-          <div class="item-nome">Cruzeiros e Cruzados</div>
-          <p class="item-desc">Cruzeiro, Cruzeiro Novo, Cruzado e variações monetárias modernas</p>
-        </div>
-        <div class="item-card reveal" style="--i:3">
-          <svg class="item-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="5"/><path d="m8.5 12.5-2 8 5.5-3 5.5 3-2-8"/></svg>
-          <div class="item-nome">Moedas Comemorativas</div>
-          <p class="item-desc">Edições especiais, séries temáticas e proof sets do Banco Central</p>
-        </div>
-        <div class="item-card reveal" style="--i:4">
-          <svg class="item-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/></svg>
-          <div class="item-nome">Moedas Estrangeiras</div>
-          <p class="item-desc">Peças históricas de outros países — europeias, americanas e coloniais</p>
-        </div>
-        <div class="item-card reveal" style="--i:5">
-          <svg class="item-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
-          <div class="item-nome">Cédulas Antigas</div>
-          <p class="item-desc">Papel-moeda do Império e de toda a história monetária do Brasil</p>
-        </div>
-        <div class="item-card reveal" style="--i:6">
-          <svg class="item-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8 12 4l9 4-9 4-9-4Z"/><path d="M3 8v8l9 4 9-4V8M12 12v8"/></svg>
-          <div class="item-nome">Coleções Completas</div>
-          <p class="item-desc">Álbuns organizados, conjuntos temáticos ou coleções herdadas, avaliados no conjunto</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SEÇÃO: PROVA SOCIAL
-       ============================================================ -->
-  <section class="depoimentos" id="depoimentos">
-    <div class="container">
-      <div class="secao-cabecalho reveal">
-        <span class="eyebrow">Prova social</span>
-        <h2>Quem já avaliou, recomenda</h2>
-      </div>
-
+      <h2 class="section-title">Quem já avaliou com a gente</h2>
       <div class="depoimentos-grid">
-        <article class="depoimento-card reveal">
-          <div class="estrelas" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
-          </div>
-          <p class="depoimento-texto">"Achei que as moedas do meu avô não valiam nada. Recebi uma proposta justa e vendi sem sair de casa."</p>
-          <div class="depoimento-autor">
-            <div class="avatar" aria-hidden="true">MS</div>
-            <div>
-              <div class="depoimento-nome">Marina S.</div>
-              <div class="depoimento-local">Belo Horizonte, MG</div>
-            </div>
-          </div>
+        <article class="card">
+          <div class="testimonial-stars" aria-hidden="true">★★★★★</div>
+          <p class="testimonial-quote">"Achei que as moedas do meu avô não valiam nada. Recebi uma proposta justa e vendi sem sair de casa."</p>
+          <p class="testimonial-author">Marina S. — Belo Horizonte, MG</p>
         </article>
-
-        <article class="depoimento-card reveal">
-          <div class="estrelas" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
-          </div>
-          <p class="depoimento-texto">"Atendimento super transparente. Me explicaram cada detalhe antes de eu decidir vender."</p>
-          <div class="depoimento-autor">
-            <div class="avatar" aria-hidden="true">RA</div>
-            <div>
-              <div class="depoimento-nome">Roberto A.</div>
-              <div class="depoimento-local">Contagem, MG</div>
-            </div>
-          </div>
+        <article class="card">
+          <div class="testimonial-stars" aria-hidden="true">★★★★★</div>
+          <p class="testimonial-quote">"Atendimento super transparente. Me explicaram cada detalhe antes de eu decidir vender."</p>
+          <p class="testimonial-author">Roberto A. — Contagem, MG</p>
         </article>
-
-        <article class="depoimento-card reveal">
-          <div class="estrelas" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
-          </div>
-          <p class="depoimento-texto">"Enviei fotos numa sexta e já tinha resposta no mesmo dia. Processo rápido, sem complicação."</p>
-          <div class="depoimento-autor">
-            <div class="avatar" aria-hidden="true">CT</div>
-            <div>
-              <div class="depoimento-nome">Cláudia T.</div>
-              <div class="depoimento-local">Betim, MG</div>
-            </div>
-          </div>
+        <article class="card">
+          <div class="testimonial-stars" aria-hidden="true">★★★★★</div>
+          <p class="testimonial-quote">"Enviei fotos numa sexta e já tinha resposta no mesmo dia. Processo rápido, sem complicação."</p>
+          <p class="testimonial-author">Cláudia T. — Betim, MG</p>
         </article>
       </div>
-
-      <!-- CTA obrigatório nº2: logo após a prova social -->
-      <div class="cta-strip reveal">
-        <div>
-          <h3>Pronto pra saber o valor real das suas peças?</h3>
-          <p>Leva menos de 2 minutos e não custa nada.</p>
-        </div>
-        <a href="#" class="btn btn-wa js-whatsapp-cta" data-cta="pos-prova-social">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa-icon"/></svg>
+      <div class="depoimentos-cta">
+        <a href="#" class="btn btn-whatsapp js-whatsapp-cta" data-cta="pos-depoimentos">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
           Enviar Fotos pelo WhatsApp
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SEÇÃO: OFERTA
-       ============================================================ -->
-  <section class="oferta" id="oferta">
+  <!-- GARANTIA -->
+  <section class="garantia bg-vault" id="garantia" data-reveal>
     <div class="container">
-      <div class="oferta-card reveal">
-        <span class="oferta-selo">AVALIAÇÃO 100% GRATUITA</span>
-        <h2>O que você recebe, sem pagar nada</h2>
-        <ul class="oferta-lista">
-          <li class="oferta-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
-            <span>Análise detalhada por especialistas em numismática</span>
-          </li>
-          <li class="oferta-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
-            <span>Identificação de raridade, ano e estado de conservação</span>
-          </li>
-          <li class="oferta-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
-            <span>Explicação clara de como chegamos ao valor da peça</span>
-          </li>
-          <li class="oferta-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
-            <span>Proposta de compra justa — sem obrigação de aceitar</span>
-          </li>
-          <li class="oferta-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
-            <span>Orientação mesmo se você decidir não vender agora</span>
-          </li>
-        </ul>
-        <p class="oferta-rodape">Tudo isso sem custo, sem compromisso e 100% pelo WhatsApp.</p>
-      </div>
+      <div class="badge-pill"><span>AVALIAÇÃO 100% GRATUITA</span></div>
+      <h2 class="garantia-title">Garantia de avaliação 100% gratuita e sem compromisso</h2>
+      <p class="garantia-body">Você não paga nada pela avaliação, nunca. Se decidir não vender, não há qualquer custo ou cobrança. Nossa proposta é feita com base em critérios claros de mercado — e a decisão final é sempre sua.</p>
+      <a href="#" class="btn btn-whatsapp js-whatsapp-cta" data-cta="garantia">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+        Quero Avaliar Minhas Peças
+      </a>
     </div>
   </section>
 
-  <!-- ============================================================
-       SEÇÃO: GARANTIA
-       ============================================================ -->
-  <section class="garantia">
+  <!-- FAQ -->
+  <section class="faq bg-creme" id="faq" data-reveal>
     <div class="container">
-      <div class="garantia-box reveal">
-        <svg class="selo-garantia" viewBox="0 0 120 120" aria-hidden="true">
-          <circle cx="60" cy="60" r="52" fill="none" stroke="var(--dourado)" stroke-width="1.6"/>
-          <circle cx="60" cy="60" r="42" fill="none" stroke="var(--dourado-claro)" stroke-width="1" opacity=".6"/>
-          <path d="M60 34c14 0 24 6 24 6v18c0 16-11 24-24 30-13-6-24-14-24-30V40s10-6 24-6Z" fill="none" stroke="var(--marfim)" stroke-width="2.2"/>
-          <path d="M50 60l7 7 14-14" fill="none" stroke="var(--dourado)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div>
-          <h2>Garantia de avaliação 100% gratuita e sem compromisso</h2>
-          <p>Você não paga nada pela avaliação, nunca. Se decidir não vender, não há qualquer custo ou cobrança. Nossa proposta é feita com base em critérios claros de mercado — e a decisão final é sempre sua.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SEÇÃO: FAQ
-       ============================================================ -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="secao-cabecalho reveal">
-        <span class="eyebrow">Perguntas frequentes</span>
-        <h2>Ainda com dúvidas? A gente resolve</h2>
-      </div>
-
-      <div class="faq-lista">
-        <div class="faq-item reveal">
-          <button class="faq-pergunta" aria-expanded="false" aria-controls="faq-r1">
-            A avaliação é mesmo gratuita?
-            <span class="faq-icone" aria-hidden="true"></span>
+      <h2 class="section-title">Perguntas frequentes</h2>
+      <div class="faq-list">
+        <div class="faq-item is-open">
+          <button type="button" class="faq-question" aria-expanded="true" aria-controls="faq-panel-1" id="faq-button-1">
+            <span>A avaliação é mesmo gratuita?</span>
+            <span class="faq-icon" aria-hidden="true">＋</span>
           </button>
-          <div class="faq-resposta-wrap" id="faq-r1">
-            <div class="faq-resposta-inner"><p class="faq-resposta">Sim. Você não paga nada para receber a avaliação das suas peças, em nenhuma etapa do processo.</p></div>
+          <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-button-1">
+            <div class="faq-panel-inner"><p class="faq-answer">Sim. Você não paga nada para receber a avaliação das suas peças, em nenhuma etapa do processo.</p></div>
           </div>
         </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-pergunta" aria-expanded="false" aria-controls="faq-r2">
-            Preciso sair de casa ou enviar as peças pelo correio?
-            <span class="faq-icone" aria-hidden="true"></span>
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-2" id="faq-button-2">
+            <span>Preciso sair de casa ou enviar as peças pelo correio?</span>
+            <span class="faq-icon" aria-hidden="true">＋</span>
           </button>
-          <div class="faq-resposta-wrap" id="faq-r2">
-            <div class="faq-resposta-inner"><p class="faq-resposta">Não. Todo o processo inicial acontece por fotos, direto pelo WhatsApp. Só depois de uma proposta aceita combinamos os próximos passos com você.</p></div>
+          <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-button-2">
+            <div class="faq-panel-inner"><p class="faq-answer">Não. Todo o processo inicial acontece por fotos, direto pelo WhatsApp. Só depois de uma proposta aceita combinamos os próximos passos com você.</p></div>
           </div>
         </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-pergunta" aria-expanded="false" aria-controls="faq-r3">
-            E se eu não quiser vender depois da avaliação?
-            <span class="faq-icone" aria-hidden="true"></span>
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-3" id="faq-button-3">
+            <span>E se eu não quiser vender depois da avaliação?</span>
+            <span class="faq-icon" aria-hidden="true">＋</span>
           </button>
-          <div class="faq-resposta-wrap" id="faq-r3">
-            <div class="faq-resposta-inner"><p class="faq-resposta">Sem problema nenhum. A avaliação não gera qualquer compromisso de venda — você decide o que fazer com a informação.</p></div>
+          <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-button-3">
+            <div class="faq-panel-inner"><p class="faq-answer">Sem problema nenhum. A avaliação não gera qualquer compromisso de venda — você decide o que fazer com a informação.</p></div>
           </div>
         </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-pergunta" aria-expanded="false" aria-controls="faq-r4">
-            Quanto tempo demora para receber uma resposta?
-            <span class="faq-icone" aria-hidden="true"></span>
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-4" id="faq-button-4">
+            <span>Quanto tempo demora para receber uma resposta?</span>
+            <span class="faq-icon" aria-hidden="true">＋</span>
           </button>
-          <div class="faq-resposta-wrap" id="faq-r4">
-            <div class="faq-resposta-inner"><p class="faq-resposta">Normalmente respondemos ainda no mesmo dia útil, muitas vezes em poucas horas.</p></div>
+          <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-button-4">
+            <div class="faq-panel-inner"><p class="faq-answer">Em dias úteis, a maioria das avaliações é respondida em poucas horas. Casos que exigem mais análise podem levar até um dia útil.</p></div>
           </div>
         </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-pergunta" aria-expanded="false" aria-controls="faq-r5">
-            Minhas moedas são muito antigas ou estão gastas, ainda têm valor?
-            <span class="faq-icone" aria-hidden="true"></span>
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-5" id="faq-button-5">
+            <span>Minhas moedas são muito antigas ou estão gastas, ainda têm valor?</span>
+            <span class="faq-icon" aria-hidden="true">＋</span>
           </button>
-          <div class="faq-resposta-wrap" id="faq-r5">
-            <div class="faq-resposta-inner"><p class="faq-resposta">Só uma avaliação pode dizer com certeza. Muitas peças com desgaste aparente têm valor histórico ou de colecionador — vale a pena mandar as fotos.</p></div>
+          <div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-button-5">
+            <div class="faq-panel-inner"><p class="faq-answer">Só uma avaliação pode dizer com certeza. Muitas peças com desgaste aparente têm valor histórico ou de colecionador — vale a pena mandar as fotos.</p></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SEÇÃO: CTA FINAL
-       ============================================================ -->
-  <section class="cta-final">
-    <div class="cta-glow" aria-hidden="true"></div>
+  <!-- CTA FINAL -->
+  <section class="cta-final bg-vault" id="cta-final" data-reveal>
     <div class="container">
-      <span class="eyebrow reveal">Antes que fique esquecido</span>
-      <h2 class="reveal">Descubra o valor do seu <em>patrimônio histórico</em></h2>
-      <p class="reveal">Muita gente descobre tarde demais que tinha uma peça rara em mãos. Envie as fotos agora e descubra, sem custo e sem compromisso, se suas moedas ou cédulas valem mais do que você imagina.</p>
-      <a href="#" class="btn btn-wa js-whatsapp-cta reveal" data-cta="final">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa-icon"/></svg>
+      <h2 class="cta-final-title">Muita gente descobre tarde demais que tinha uma peça rara em mãos.</h2>
+      <p class="cta-final-body">Envie as fotos agora e descubra, sem custo e sem compromisso, se suas moedas ou cédulas valem mais do que você imagina.</p>
+      <a href="#" class="btn btn-whatsapp js-whatsapp-cta" data-cta="final">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
         Quero Avaliar Minhas Peças Agora
       </a>
-      <div class="trust-bar reveal">
-        <span>Resposta rápida</span><span>·</span><span>Sem compromisso</span><span>·</span><span>100% gratuito</span>
-      </div>
     </div>
   </section>
 
 </main>
 
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-logo">Numismática BH</div>
-    <p>Avaliação especializada de moedas e cédulas antigas em Belo Horizonte e região.</p>
-    <!-- Sugestão: inclua aqui CNPJ e endereço, se aplicável -->
-    <p>© 2026 Numismática BH. Todos os direitos reservados.</p>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/logo-numismatica-bh-white-transparent.svg" alt="Numismática BH">
+        <p>Avaliação especializada de moedas e cédulas antigas em Belo Horizonte e região.</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:contato@numismaticabh.com.br" class="footer-link">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-email"/></svg>
+          <span>contato@numismaticabh.com.br</span>
+        </a>
+        <a href="https://instagram.com/numismaticabh" target="_blank" rel="noopener" class="footer-link" aria-label="Instagram @numismaticabh">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-instagram"/></svg>
+          <span>@numismaticabh</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Numismática BH — CNPJ 67.193.955/0001-83 · Belo Horizonte, MG</p>
+      <p>© 2026 Numismática BH. Todos os direitos reservados.</p>
+    </div>
   </div>
 </footer>
 
-<!-- CTA flutuante — ponto de contato extra além dos 3 obrigatórios -->
-<a href="#" class="whatsapp-flutuante js-whatsapp-cta" data-cta="flutuante" aria-label="Falar agora no WhatsApp">
-  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><use href="#wa-icon"/></svg>
+<a href="#" class="whatsapp-float js-whatsapp-cta" data-cta="flutuante" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
 </a>
 
-<script>
-(function(){
-  'use strict';
-
-  /* ============================================================
-     PERSONALIZAÇÃO: WHATSAPP
-     Troque o número abaixo (formato: 55 + DDD + número, só dígitos)
-     e, se quiser, a mensagem inicial que já chega pronta no chat.
-     ============================================================ */
-  var WHATSAPP_NUMBER = '5531972667185';
-  var WHATSAPP_MESSAGE = 'Olá! Tenho moedas/cédulas antigas e gostaria de uma avaliação gratuita.';
-  var WHATSAPP_LINK = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(WHATSAPP_MESSAGE);
-
-  document.querySelectorAll('.js-whatsapp-cta').forEach(function(el){
-    el.setAttribute('href', WHATSAPP_LINK);
-    el.setAttribute('target', '_blank');
-    el.setAttribute('rel', 'noopener');
-  });
-
-  /* FAQ — acordeão acessível */
-  document.querySelectorAll('.faq-item').forEach(function(item){
-    var pergunta = item.querySelector('.faq-pergunta');
-    pergunta.addEventListener('click', function(){
-      var abrindo = !item.classList.contains('is-open');
-      item.classList.toggle('is-open', abrindo);
-      pergunta.setAttribute('aria-expanded', String(abrindo));
-    });
-  });
-
-  /* Revelar elementos ao rolar a página */
-  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var reveals = document.querySelectorAll('.reveal');
-  if (!prefersReduced && 'IntersectionObserver' in window){
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting){
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold:.15, rootMargin:'0px 0px -40px 0px' });
-    reveals.forEach(function(el){ observer.observe(el); });
-  } else {
-    reveals.forEach(function(el){ el.classList.add('is-visible'); });
-  }
-
-  /* Ilustração da moeda: gera os traços finos (efeito "guilhoché")
-     por código, mantendo o HTML principal mais limpo */
-  function buildCoinDecoration(){
-    var rosette = document.getElementById('moedaRosette');
-    var anel = document.getElementById('moedaAnel');
-    if (!rosette || !anel) return;
-    var svgNS = 'http://www.w3.org/2000/svg';
-    var cx = 230, cy = 230, i, angle, line;
-
-    for (i = 0; i < 20; i++){
-      angle = (360 / 20) * i;
-      line = document.createElementNS(svgNS, 'line');
-      line.setAttribute('x1', cx); line.setAttribute('y1', cy - 58);
-      line.setAttribute('x2', cx); line.setAttribute('y2', cy - 92);
-      line.setAttribute('transform', 'rotate(' + angle + ' ' + cx + ' ' + cy + ')');
-      rosette.appendChild(line);
-    }
-    for (i = 0; i < 40; i++){
-      angle = (360 / 40) * i;
-      line = document.createElementNS(svgNS, 'line');
-      line.setAttribute('x1', cx); line.setAttribute('y1', cy - 150);
-      line.setAttribute('x2', cx); line.setAttribute('y2', cy - 159);
-      line.setAttribute('transform', 'rotate(' + angle + ' ' + cx + ' ' + cy + ')');
-      anel.appendChild(line);
-    }
-  }
-  buildCoinDecoration();
-
-})();
-</script>
-
+<script src="js/main.js"></script>
 </body>
 </html>
