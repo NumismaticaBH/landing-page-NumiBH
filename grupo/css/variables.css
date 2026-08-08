@@ -1,0 +1,57 @@
+/* ==========================================================================
+   VARIÁVEIS DE DESIGN — Numismática BH / Grupo
+   Mesma paleta "Cofre & Ouro" do site principal (../css/variables.css).
+   Página do grupo de colecionadores no WhatsApp: mantém as cores da marca,
+   troque os valores aqui para mudar a página inteira.
+   ========================================================================== */
+:root {
+  /* Cores base — idênticas às do site principal */
+  --color-creme: #F7F1E6;
+  --color-creme-escuro: #EEE1C6;
+  --color-marfim: #FFFBF3;
+  --color-vault: #1B1206;
+  --color-vault-alt: #120C04;
+  --color-cacau: #33210F;
+  --color-cacau-claro: #6E4E37;
+  --color-dourado: #C79A46;
+  --color-dourado-claro: #E4CB8E;
+
+  /* WhatsApp — verde oficial, usado nos CTAs de WhatsApp */
+  --color-wa: #25D366;
+  --color-wa-escuro: #1DA851;
+  --color-wa-texto: #0B2E1A;
+
+  /* Texto sobre fundo escuro (base desta página) */
+  --color-text-on-dark: rgba(255, 251, 243, .82);
+  --color-text-on-dark-muted: rgba(255, 251, 243, .6);
+
+  /* Tipografia */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Espaçamento */
+  --space-2xs: .4rem;
+  --space-xs: .8rem;
+  --space-sm: 1.2rem;
+  --space-md: 2rem;
+  --space-lg: 3.2rem;
+  --space-xl: 5.2rem;
+
+  /* Padding padrão de seção (topo/base) e lateral */
+  --section-padding-y: clamp(64px, 9vw, 112px);
+  --section-padding-x: clamp(20px, 6vw, 48px);
+
+  /* Raios, sombras, transições */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --shadow-md: 0 12px 28px rgba(0, 0, 0, .35);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, .4);
+  --transition: .3s ease;
+
+  /* Largura máxima do conteúdo */
+  --container-width: 1180px;
+  --container-width-narrow: 960px;
+}
