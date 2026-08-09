@@ -107,6 +107,16 @@
   color: var(--color-cacau-claro-alt);
 }
 
+/* Em telas de até 768px (celular e tablet pequeno), os tópicos de
+   estatística ficam empilhados verticalmente, 1 por linha. */
+@media (max-width: 768px) {
+  .stat-list {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: var(--space-sm);
+  }
+}
+
 /* ==========================================================================
    CARTÕES (compromissos, avaliamos, depoimentos)
    ========================================================================== */
