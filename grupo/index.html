@@ -42,30 +42,16 @@
     flex-wrap: wrap;
   }
   .site-logo img {
-    height: 72px !important;
+    height: 64px !important;
   }
   .header-actions {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    width: 100%;
     gap: 8px !important;
     margin-top: 10px;
   }
-  .header-actions .btn-ghost {
-    order: 1;
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    padding: 10px 16px !important;
-    font-size: 14px;
-  }
+  .header-actions .btn-ghost,
   .header-actions .btn-whatsapp--compact {
-    order: 2;
-    width: 100%;
-    justify-content: center;
-    padding: 10px 16px !important;
-    font-size: 14px;
+    padding: 8px 16px !important;
+    font-size: 13px;
   }
 
   /* Rodapé (logo grande também pode causar overflow) */
@@ -106,12 +92,12 @@
   </symbol>
 </svg>
 
-<header class="site-header" id="siteHeader" style="background-color: #20140A; border-bottom: 1px solid rgba(199,154,70,.25); padding: 20px 0;">
+<header class="site-header" id="siteHeader" style="background-color: #3B2A18; border-bottom: 1px solid rgba(199,154,70,.35); padding: 20px 0;">
   <div class="container">
     <a href="#topo" class="site-logo" aria-label="Numismática BH — grupo de colecionadores">
       <img src="../assets/logo-numismatica-bh-branca.png" alt="Logo Numismática BH" style="height: 116px; width: auto;">
     </a>
-    <div class="header-actions">
+    <div class="header-actions" style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
       <a href="../" class="btn-ghost" style="border: 1px solid rgba(199,154,70,.5); border-radius: 999px; padding: 10px 22px;">Vender minhas peças</a>
       <a href="#" class="btn btn-whatsapp btn-whatsapp--compact js-whatsapp-cta" data-cta="header">
         <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
@@ -315,4 +301,148 @@
     <div class="container">
       <div class="membership-card">
         <span class="membership-notch membership-notch--left" aria-hidden="true"></span>
-        <span class="membership-notch membership-notch--right"
+        <span class="membership-notch membership-notch--right" aria-hidden="true"></span>
+
+        <div class="membership-header">
+          <span class="membership-brand">Numismática BH</span>
+          <span class="membership-tag">Acesso ao acervo</span>
+        </div>
+
+        <h2 class="membership-title">O que você recebe ao entrar no grupo</h2>
+
+        <ul class="membership-list">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-check"/></svg>
+            <span>Peças verificadas por especialistas antes de ir para o grupo</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-check"/></svg>
+            <span>Fotos, ano, estado de conservação e preço já publicados</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-check"/></svg>
+            <span>Aviso em primeira mão, assim que uma peça nova chega</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-check"/></svg>
+            <span>Negociação direta pelo WhatsApp, sem intermediário</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-check"/></svg>
+            <span>Zero obrigação de comprar — você acompanha no seu ritmo</span>
+          </li>
+        </ul>
+
+        <a href="#" class="btn btn-whatsapp js-whatsapp-cta" data-cta="passe-de-membro">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+          Entrar no Grupo — Grátis
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-vault-alt" id="faq" data-reveal>
+    <div class="container">
+      <span class="eyebrow eyebrow--center">Perguntas frequentes</span>
+      <h2 class="section-title section-title--center">Ainda com dúvidas?</h2>
+      <div class="faq-list">
+        <div class="faq-item is-open">
+          <button type="button" class="faq-question" aria-expanded="true" aria-controls="faq-panel-1" id="faq-button-1">
+            <span>Custa alguma coisa para entrar no grupo?</span>
+            <span class="faq-icon" aria-hidden="true">＋</span>
+          </button>
+          <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-button-1">
+            <div class="faq-panel-inner"><p class="faq-answer">Não. A entrada no grupo é gratuita. Você só paga se decidir comprar alguma peça publicada.</p></div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-2" id="faq-button-2">
+            <span>Como funciona o pagamento e o envio?</span>
+            <span class="faq-icon" aria-hidden="true">＋</span>
+          </button>
+          <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-button-2">
+            <div class="faq-panel-inner"><p class="faq-answer">Depois de reservar uma peça, combinamos forma de pagamento e envio diretamente pelo WhatsApp.</p></div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-3" id="faq-button-3">
+            <span>As peças têm garantia de autenticidade?</span>
+            <span class="faq-icon" aria-hidden="true">＋</span>
+          </button>
+          <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-button-3">
+            <div class="faq-panel-inner"><p class="faq-answer">Sim. Toda peça publicada no grupo passa antes pela avaliação dos nossos especialistas.</p></div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-4" id="faq-button-4">
+            <span>Com que frequência surgem peças novas?</span>
+            <span class="faq-icon" aria-hidden="true">＋</span>
+          </button>
+          <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-button-4">
+            <div class="faq-panel-inner"><p class="faq-answer">O acervo se renova constantemente, já que recebemos peças novas toda semana através das avaliações que fazemos.</p></div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-5" id="faq-button-5">
+            <span>Posso sair do grupo quando quiser?</span>
+            <span class="faq-icon" aria-hidden="true">＋</span>
+          </button>
+          <div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-button-5">
+            <div class="faq-panel-inner"><p class="faq-answer">Claro. Não há qualquer fidelidade ou compromisso — você entra e sai quando quiser.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final" id="cta-final" data-reveal>
+    <div class="container">
+      <span class="eyebrow eyebrow--center">Não perca a próxima peça</span>
+      <h2 class="cta-final-title">Sua próxima peça pode estar a uma <em>mensagem de distância</em></h2>
+      <p class="cta-final-body">Entre no grupo, acompanhe no seu ritmo e garanta em primeira mão as peças que combinam com a sua coleção.</p>
+      <a href="#" class="btn btn-whatsapp js-whatsapp-cta" data-cta="final">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+        Entrar no Grupo do WhatsApp
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="../assets/logo-numismatica-bh-branca.png" alt="Logo Numismática BH" style="height: 160px; width: auto;">
+        <p>Peças de numismática com procedência verificada, para colecionadores de Belo Horizonte e região.</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:contato@numismaticabh.com.br" class="footer-link">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-email"/></svg>
+          <span>contato@numismaticabh.com.br</span>
+        </a>
+        <a href="https://instagram.com/numismaticabh" target="_blank" rel="noopener" class="footer-link" aria-label="Instagram @numismaticabh">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-instagram"/></svg>
+          <span>@numismaticabh</span>
+        </a>
+        <a href="../" class="footer-link">
+          <span>Também compramos suas peças</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Numismática BH — CNPJ 67.193.955/0001-83 · Belo Horizonte, MG</p>
+      <p>© 2026 Numismática BH. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="whatsapp-float js-whatsapp-cta" data-cta="flutuante" aria-label="Entrar no grupo pelo WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+</a>
+
+<script src="js/main.js"></script>
+</body>
+</html>
