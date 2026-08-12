@@ -59,13 +59,13 @@
     height: 100px !important;
   }
 
-  /* Ticker de confiança — texto "embolando" em telas estreitas */
-  .ticker-track {
-    font-size: 11px !important;
-    letter-spacing: 1px !important;
-  }
+  /* Ticker de confiança — garante que a fita não quebre linha */
+  .ticker-track,
   .ticker-track span {
-    white-space: nowrap;
+    white-space: nowrap !important;
+  }
+  .ticker-section {
+    overflow: hidden !important;
   }
 
   /* Passe de membro — "Numismática BH" e "Acesso ao acervo" embolando */
