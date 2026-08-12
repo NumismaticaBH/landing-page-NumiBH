@@ -59,13 +59,32 @@
     height: 100px !important;
   }
 
-  /* Ticker de confiança — garante que a fita não quebre linha */
+  /* Cabeçalho fixo no mobile */
+  .site-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  main {
+    padding-top: 132px;
+  }
+
+  /* Ticker de confiança — garante que a fita não quebre linha nem embolone */
   .ticker-track,
   .ticker-track span {
     white-space: nowrap !important;
   }
   .ticker-section {
     overflow: hidden !important;
+  }
+  .ticker-track {
+    -webkit-font-smoothing: antialiased;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 
   /* Passe de membro — "Numismática BH" e "Acesso ao acervo" embolando */
